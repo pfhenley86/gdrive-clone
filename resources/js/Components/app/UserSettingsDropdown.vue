@@ -1,9 +1,9 @@
 <script setup>
 
 // Imports
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-import { ChevronDownIcon } from '@heroicons/vue/20/solid'
-import ResponsiveNavLink  from '@/Components/ResponsiveNavLink.vue'
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
+import { ChevronDownIcon } from '@heroicons/vue/20/solid';
+import ResponsiveNavLink  from '@/Components/ResponsiveNavLink.vue';
 
 
 // Uses
