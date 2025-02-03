@@ -1,7 +1,6 @@
 <script setup>
-
 // Imports
-
+    import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 // Uses
 
 // Refs
@@ -21,5 +20,7 @@
 </style>
 
 <template>
-    {{ $page.url }}
+    <AuthenticatedLayout>
+        {{ $page.url }}
+    </AuthenticatedLayout>
 </template>

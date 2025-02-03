@@ -53,7 +53,7 @@ import ResponsiveNavLink  from '@/Components/ResponsiveNavLink.vue';
             <div class="px-1 py-1">
                 <MenuItem v-slot="{ active }">
                     <ResponsiveNavLink
-                        href="route('profile.edit')"
+                        :href="route('profile.edit')"
                         class="block px-4 py-2 text-sm text-gray-700"
                         :class="[active ? 'bg-gray-100 text-gray-900' : '', 'text-gray-700', 'block px-4 py-2 text-sm']"
                     >
