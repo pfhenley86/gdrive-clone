@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\File;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,6 @@ class RegisteredUserController extends Controller
         $file->is_folder = 1;
         $file->makeRoot()->save();
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route(RouteServiceProvider::HOME, absolute: false));
     }
 }
