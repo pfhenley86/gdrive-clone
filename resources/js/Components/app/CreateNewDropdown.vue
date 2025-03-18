@@ -2,16 +2,22 @@
 
 // Imports
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
+import CreateFolderModal from './CreateFolderModal.vue';
+import { ref } from 'vue';
 
 // Uses
 
 // Refs
+const createFolderModal = ref(false)
 
 // Props & Emit
 
 // Computed
 
 // Methods
+function showCreateFolderModal(){
+    createFolderModal.value = true;
+}
 
 // Hooks
 
@@ -41,7 +47,8 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
           >
             <div class="px-1 py-1">
                 <MenuItem v-slot="{ active }">
-                    <a href="#" class="block p-2 text-sm text-gray-700">New Folder</a>
+                    <a href="#" @click.prevent="showCreateFolderModal"
+                    class="block p-2 text-sm text-gray-700">New Folder</a>
                 </MenuItem>
             </div>
             <div class="px-1 py-1">
@@ -55,4 +62,5 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
           </MenuItems>
         </transition>
       </Menu>
+      <CreateFolderModal v-model="createFolderModal" />
 </template>
