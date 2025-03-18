@@ -41,7 +41,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
           >
             <div class="px-1 py-1">
                 <MenuItem v-slot="{ active }">
-                    <a class="block p-2 text-sm text-gray-700">New Folder</a>
+                    <a href="#" class="block p-2 text-sm text-gray-700">New Folder</a>
                 </MenuItem>
             </div>
             <div class="px-1 py-1">
