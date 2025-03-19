@@ -2,10 +2,16 @@
 
 // Imports
 import { Modal } from '@headlessui/vue';
-import InputLabel from 'vendor/laravel/breeze/stubs/inertia-react/resources/js/Components/InputLabel';
-import TextInput from 'vendor/laravel/breeze/stubs/inertia-react/resources/js/Components/TextInput';
+import InputLabel from '@Components/InputLabel';
+import { useForm } from '@inertiajs/vue3';
+import InputError from '@Components/InputError';
+import TextInput from '@Components/TextInput';
+import SecondaryButton from '@Components/SecondaryButton.vue';
 
 // Uses
+const form = useForm({
+    name: ''
+})
 
 // Refs
 
@@ -14,9 +20,18 @@ const { modelValue } = defineProps({
   modelValue: Boolean
 })
 
+const emit = defineEmits(['update:modelValue']);
+
 // Computed
 
 // Methods
+function createFolder(){
+    console.log('Create Folder');
+}
+
+function closeModal(){
+    emit('update:modelValue');
+}
 
 // Hooks
 
@@ -41,7 +56,10 @@ const { modelValue } = defineProps({
                            placeholder="Folder Name"
                            @keyup.enter="createFolder" />
                 />
-                <InputError :message="form.errors.name" />
+                <InputError :message="form.errors.name" class="mt-2" />
+            </div>
+            <div class="flex justify-end mt-6">
+                <SecondaryButton @click="closeModal">Cancel</SecondaryButton>
             </div>
         </div>
     </Modal>
